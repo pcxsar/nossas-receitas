@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+<title>Paulo & Julia — Nossas Receitas</title>
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Nossas Receitas">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#f7ecd8">
+<link rel="apple-touch-icon" href="icon.png">
+<link rel="icon" type="image/png" href="icon.png">
+<link rel="manifest" href="manifest.json">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500;1,9..144,600&family=Karla:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=5">
+</head>
+<body>
+
+<svg style="display:none" aria-hidden="true">
+<defs>
+<symbol id="i-bookmark" viewBox="0 0 24 24">
+  <path d="M17 3a2 2 0 0 1 2 2v15a1 1 0 0 1-1.496.868l-4.512-2.578a2 2 0 0 0-1.984 0l-4.512 2.578A1 1 0 0 1 5 20V5a2 2 0 0 1 2-2z" />
+</symbol>
+<symbol id="i-cake" viewBox="0 0 24 24">
+  <path d="M20 21v-8a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v8" />
+  <path d="M4 16s.5-1 2-1 2.5 2 4 2 2.5-2 4-2 2.5 2 4 2 2-1 2-1" />
+  <path d="M2 21h20" />
+  <path d="M7 8v3" />
+  <path d="M12 8v3" />
+  <path d="M17 8v3" />
+  <path d="M7 4h.01" />
+  <path d="M12 4h.01" />
+  <path d="M17 4h.01" />
+</symbol>
+<symbol id="i-chef-hat" viewBox="0 0 24 24">
+  <path d="M17 21a1 1 0 0 0 1-1v-5.35c0-.457.316-.844.727-1.041a4 4 0 0 0-2.134-7.589 5 5 0 0 0-9.186 0 4 4 0 0 0-2.134 7.588c.411.198.727.585.727 1.041V20a1 1 0 0 0 1 1Z" />
+  <path d="M6 17h12" />
+</symbol>
+<symbol id="i-leaf" viewBox="0 0 24 24">
+  <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
+  <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+</symbol>
+<symbol id="i-quote" viewBox="0 0 24 24">
+  <path d="M16 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z" />
+  <path d="M5 3a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2 1 1 0 0 1 1 1v1a2 2 0 0 1-2 2 1 1 0 0 0-1 1v2a1 1 0 0 0 1 1 6 6 0 0 0 6-6V5a2 2 0 0 0-2-2z" />
+</symbol>
+<symbol id="i-camera" viewBox="0 0 24 24">
+  <path d="M13.997 4a2 2 0 0 1 1.76 1.05l.486.9A2 2 0 0 0 18.003 7H20a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V9a2 2 0 0 1 2-2h1.997a2 2 0 0 0 1.759-1.048l.489-.904A2 2 0 0 1 10.004 4z" />
+  <circle cx="12" cy="13" r="3" />
+</symbol>
+<symbol id="i-check" viewBox="0 0 24 24">
+  <path d="M20 6 9 17l-5-5" />
+</symbol>
+<symbol id="i-clock" viewBox="0 0 24 24">
+  <circle cx="12" cy="12" r="10" />
+  <path d="M12 6v6l4 2" />
+</symbol>
+<symbol id="i-clipboard-paste" viewBox="0 0 24 24">
+  <path d="M11 14h10" />
+  <path d="M16 4h2a2 2 0 0 1 2 2v1.344" />
+  <path d="m17 18 4-4-4-4" />
+  <path d="M8 4H6a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h12a2 2 0 0 0 1.793-1.113" />
+  <rect x="8" y="2" width="8" height="4" rx="1" />
+</symbol>
+<symbol id="i-cloud-off" viewBox="0 0 24 24">
+  <path d="M10.94 5.274A7 7 0 0 1 15.71 10h1.79a4.5 4.5 0 0 1 4.222 6.057" />
+  <path d="M18.796 18.81A4.5 4.5 0 0 1 17.5 19H9A7 7 0 0 1 5.79 5.78" />
+  <path d="m2 2 20 20" />
+</symbol>
+<symbol id="i-cloud" viewBox="0 0 24 24">
+  <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z" />
+</symbol>
+<symbol id="i-cup-soda" viewBox="0 0 24 24">
+  <path d="m6 8 1.75 12.28a2 2 0 0 0 2 1.72h4.54a2 2 0 0 0 2-1.72L18 8" />
+  <path d="M5 8h14" />
+  <path d="M7 15a6.47 6.47 0 0 1 5 0 6.47 6.47 0 0 0 5 0" />
+  <path d="m12 8 1-6h2" />
+</symbol>
+<symbol id="i-drumstick" viewBox="0 0 24 24">
+  <path d="M15.4 15.63a7.875 6 135 1 1 6.23-6.23 4.5 3.43 135 0 0-6.23 6.23" />
+  <path d="m8.29 12.71-2.6 2.6a2.5 2.5 0 1 0-1.65 4.65A2.5 2.5 0 1 0 8.7 18.3l2.59-2.59" />
+</symbol>
+<symbol id="i-heart" viewBox="0 0 24 24">
+  <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" />
+</symbol>
+<symbol id="i-ice-cream-bowl" viewBox="0 0 24 24">
+  <path d="M12 17c5 0 8-2.69 8-6H4c0 3.31 3 6 8 6m-4 4h8m-4-3v3M5.14 11a3.5 3.5 0 1 1 6.71 0" />
+  <path d="M12.14 11a3.5 3.5 0 1 1 6.71 0" />
+  <path d="M15.5 6.5a3.5 3.5 0 1 0-7 0" />
+</symbol>
+<symbol id="i-ice-cream-cone" viewBox="0 0 24 24">
+  <path d="m7 11 4.08 10.35a1 1 0 0 0 1.84 0L17 11" />
+  <path d="M17 7A5 5 0 0 0 7 7" />
+  <path d="M17 7a2 2 0 0 1 0 4H7a2 2 0 0 1 0-4" />
+</symbol>
+<symbol id="i-layout-grid" viewBox="0 0 24 24">
+  <rect width="7" height="7" x="3" y="3" rx="1" />
+  <rect width="7" height="7" x="14" y="3" rx="1" />
+  <rect width="7" height="7" x="14" y="14" rx="1" />
+  <rect width="7" height="7" x="3" y="14" rx="1" />
+</symbol>
+<symbol id="i-link" viewBox="0 0 24 24">
+  <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+  <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+</symbol>
+<symbol id="i-list" viewBox="0 0 24 24">
+  <path d="M3 5h.01" />
+  <path d="M3 12h.01" />
+  <path d="M3 19h.01" />
+  <path d="M8 5h13" />
+  <path d="M8 12h13" />
+  <path d="M8 19h13" />
+</symbol>
+<symbol id="i-notebook-pen" viewBox="0 0 24 24">
+  <path d="M13.4 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-7.4" />
+  <path d="M2 6h4" />
+  <path d="M2 10h4" />
+  <path d="M2 14h4" />
+  <path d="M2 18h4" />
+  <path d="M21.378 5.626a1 1 0 1 0-3.004-3.004l-5.01 5.012a2 2 0 0 0-.506.854l-.837 2.87a.5.5 0 0 0 .62.62l2.87-.837a2 2 0 0 0 .854-.506z" />
+</symbol>
+<symbol id="i-pencil" viewBox="0 0 24 24">
+  <path d="M21.174 6.812a1 1 0 0 0-3.986-3.987L3.842 16.174a2 2 0 0 0-.5.83l-1.321 4.352a.5.5 0 0 0 .623.622l4.353-1.32a2 2 0 0 0 .83-.497z" />
+  <path d="m15 5 4 4" />
+</symbol>
+<symbol id="i-plus" viewBox="0 0 24 24">
+  <path d="M5 12h14" />
+  <path d="M12 5v14" />
+</symbol>
+<symbol id="i-salad" viewBox="0 0 24 24">
+  <path d="M7 21h10" />
+  <path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z" />
+  <path d="M11.38 12a2.4 2.4 0 0 1-.4-4.77 2.4 2.4 0 0 1 3.2-2.77 2.4 2.4 0 0 1 3.47-.63 2.4 2.4 0 0 1 3.37 3.37 2.4 2.4 0 0 1-1.1 3.7 2.51 2.51 0 0 1 .03 1.1" />
+  <path d="m13 12 4-4" />
+  <path d="M10.9 7.25A3.99 3.99 0 0 0 4 10c0 .73.2 1.41.54 2" />
+</symbol>
+<symbol id="i-sandwich" viewBox="0 0 24 24">
+  <path d="m2.37 11.223 8.372-6.777a2 2 0 0 1 2.516 0l8.371 6.777" />
+  <path d="M21 15a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-5.25" />
+  <path d="M3 15a1 1 0 0 0-1 1v2a1 1 0 0 0 1 1h9" />
+  <path d="m6.67 15 6.13 4.6a2 2 0 0 0 2.8-.4l3.15-4.2" />
+  <rect width="20" height="4" x="2" y="11" rx="1" />
+</symbol>
+<symbol id="i-search" viewBox="0 0 24 24">
+  <path d="m21 21-4.34-4.34" />
+  <circle cx="11" cy="11" r="8" />
+</symbol>
+<symbol id="i-sparkles" viewBox="0 0 24 24">
+  <path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" />
+  <path d="M20 2v4" />
+  <path d="M22 4h-4" />
+  <circle cx="4" cy="20" r="2" />
+</symbol>
+<symbol id="i-soup" viewBox="0 0 24 24">
+  <path d="M12 21a9 9 0 0 0 9-9H3a9 9 0 0 0 9 9Z" />
+  <path d="M7 21h10" />
+  <path d="M19.5 12 22 6" />
+  <path d="M16.25 3c.27.1.8.53.75 1.36-.06.83-.93 1.2-1 2.02-.05.78.34 1.24.73 1.62" />
+  <path d="M11.25 3c.27.1.8.53.74 1.36-.05.83-.93 1.2-.98 2.02-.06.78.33 1.24.72 1.62" />
+  <path d="M6.25 3c.27.1.8.53.75 1.36-.06.83-.93 1.2-1 2.02-.05.78.34 1.24.74 1.62" />
+</symbol>
+<symbol id="i-star" viewBox="0 0 24 24">
+  <path d="M11.525 2.295a.53.53 0 0 1 .95 0l2.31 4.679a2.123 2.123 0 0 0 1.595 1.16l5.166.756a.53.53 0 0 1 .294.904l-3.736 3.638a2.123 2.123 0 0 0-.611 1.878l.882 5.14a.53.53 0 0 1-.771.56l-4.618-2.428a2.122 2.122 0 0 0-1.973 0L6.396 21.01a.53.53 0 0 1-.77-.56l.881-5.139a2.122 2.122 0 0 0-.611-1.879L2.16 9.795a.53.53 0 0 1 .294-.906l5.165-.755a2.122 2.122 0 0 0 1.597-1.16z" />
+</symbol>
+<symbol id="i-trash-2" viewBox="0 0 24 24">
+  <path d="M10 11v6" />
+  <path d="M14 11v6" />
+  <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6" />
+  <path d="M3 6h18" />
+  <path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2" />
+</symbol>
+<symbol id="i-triangle-alert" viewBox="0 0 24 24">
+  <path d="m21.73 18-8-14a2 2 0 0 0-3.48 0l-8 14A2 2 0 0 0 4 21h16a2 2 0 0 0 1.73-3" />
+  <path d="M12 9v4" />
+  <path d="M12 17h.01" />
+</symbol>
+<symbol id="i-users" viewBox="0 0 24 24">
+  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
+  <path d="M16 3.128a4 4 0 0 1 0 7.744" />
+  <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
+  <circle cx="9" cy="7" r="4" />
+</symbol>
+<symbol id="i-utensils" viewBox="0 0 24 24">
+  <path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2" />
+  <path d="M7 2v20" />
+  <path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7" />
+</symbol>
+<symbol id="i-wand-2" viewBox="0 0 24 24">
+  <path d="m21.64 3.64-1.28-1.28a1.21 1.21 0 0 0-1.72 0L2.36 18.64a1.21 1.21 0 0 0 0 1.72l1.28 1.28a1.2 1.2 0 0 0 1.72 0L21.64 5.36a1.2 1.2 0 0 0 0-1.72" />
+  <path d="m14 7 3 3" />
+  <path d="M5 6v4" />
+  <path d="M19 14v4" />
+  <path d="M10 2v2" />
+  <path d="M7 8H3" />
+  <path d="M21 16h-4" />
+  <path d="M11 3H9" />
+</symbol>
+<symbol id="i-x" viewBox="0 0 24 24">
+  <path d="M18 6 6 18" />
+  <path d="m6 6 12 12" />
+</symbol>
+</defs>
+</svg>
+
+<div class="bg-scrim"></div>
+<div class="grain"></div>
+
+<header>
+  <div class="kitchen-band"></div>
+  <div class="hero-badge"><svg class="icon"><use href="#i-utensils"/></svg></div>
+  <h1><span class="hero-title-sub">Caderno de receitas</span><br>Paulo <em>&amp;</em> Julia</h1>
+  <p class="hero-sub">Toda receita que já fizemos — e as que ainda vamos fazer.</p>
+</header>
+
+<!-- ==================== HOME: insights animados ==================== -->
+<section class="home-insights" id="homeInsights">
+  <div class="insight-card" id="insightCard">
+    <div class="insight-icon" id="insightIcon"><svg class="icon"><use id="insightIconUse" href="#i-sparkles"/></svg></div>
+    <div class="insight-text-wrap">
+      <p class="insight-text" id="insightText">Carregando a história de vocês…</p>
+    </div>
+  </div>
+  <div class="insight-progress" id="insightProgress"></div>
+</section>
+
+<div class="tabs" id="tabSwitcher">
+  <button class="tab-btn active" data-tab="receitas"><svg class="icon"><use href="#i-notebook-pen"/></svg> Receitas</button>
+  <button class="tab-btn" data-tab="querofazer"><svg class="icon"><use href="#i-bookmark"/></svg> Quero fazer</button>
+</div>
+
+<main>
+
+<!-- ==================== ABA: RECEITAS FEITAS ==================== -->
+<section class="tab-panel" id="panel-receitas">
+  <div class="list-section">
+    <div class="list-head">
+      <div class="list-head-top">
+        <h2>Receitas feitas</h2>
+        <div class="list-head-actions">
+          <div class="view-toggle" id="receitasViewToggle">
+            <button class="view-toggle-btn" data-view="list" aria-label="Ver como lista"><svg class="icon"><use href="#i-list"/></svg></button>
+            <button class="view-toggle-btn active" data-view="mural" aria-label="Ver como mural"><svg class="icon"><use href="#i-layout-grid"/></svg></button>
+          </div>
+          <button class="add-btn" id="addReceitaBtn"><svg class="icon"><use href="#i-plus"/></svg> Nova receita</button>
+        </div>
+      </div>
+      <div class="search-wrap">
+        <svg class="icon search-icon"><use href="#i-search"/></svg>
+        <input type="text" class="search" id="receitasSearch" placeholder="Buscar receita…">
+      </div>
+      <div id="receitasCategoryFilterRow" style="margin-top:12px;"></div>
+    </div>
+    <div class="recipe-grid" id="receitasGrid"></div>
+    <div class="empty-state" id="receitasEmpty">Nenhuma receita ainda. Bora registrar a primeira?</div>
+  </div>
+</section>
+
+<!-- ==================== ABA: QUERO FAZER ==================== -->
+<section class="tab-panel" id="panel-querofazer" hidden>
+  <div class="list-section">
+    <div class="list-head">
+      <div class="list-head-top">
+        <h2>Quero fazer</h2>
+        <div class="list-head-actions">
+          <div class="view-toggle" id="querofazerViewToggle">
+            <button class="view-toggle-btn" data-view="list" aria-label="Ver como lista"><svg class="icon"><use href="#i-list"/></svg></button>
+            <button class="view-toggle-btn active" data-view="mural" aria-label="Ver como mural"><svg class="icon"><use href="#i-layout-grid"/></svg></button>
+          </div>
+          <button class="add-btn" id="addQueroFazerBtn"><svg class="icon"><use href="#i-plus"/></svg> Adicionar</button>
+        </div>
+      </div>
+      <div class="search-wrap">
+        <svg class="icon search-icon"><use href="#i-search"/></svg>
+        <input type="text" class="search" id="querofazerSearch" placeholder="Buscar receita…">
+      </div>
+      <div id="querofazerCategoryFilterRow" style="margin-top:12px;"></div>
+    </div>
+    <div class="recipe-grid" id="querofazerGrid"></div>
+    <div class="empty-state" id="querofazerEmpty">Nada guardado ainda. Achou uma receita boa no TikTok/Insta? Guarda aqui.</div>
+  </div>
+</section>
+
+</main>
+
+<!-- ==================== MODAL: adicionar/editar receita feita ==================== -->
+<div class="modal-overlay" id="receitaModalOverlay">
+  <div class="modal-card">
+    <div class="modal-close" id="receitaModalClose"><svg class="icon"><use href="#i-x"/></svg></div>
+    <div class="modal-eyebrow" id="receitaModalEyebrow">Nova receita</div>
+
+    <div class="poster-upload">
+      <div class="poster-upload-preview" id="receitaPosterPreview"><div class="r-poster-placeholder"><svg class="icon"><use href="#i-utensils"/></svg></div></div>
+      <div class="poster-upload-actions">
+        <label class="poster-upload-btn">
+          <svg class="icon"><use href="#i-camera"/></svg> Trocar foto
+          <input type="file" accept="image/*" id="receitaPosterFile" hidden>
+        </label>
+        <button type="button" class="poster-upload-clear" id="receitaPosterClear" style="display:none;">remover foto enviada</button>
+      </div>
+    </div>
+
+    <input type="text" class="search diario-title-input" id="receitaTitleInput" placeholder="Nome da receita">
+    <div class="dup-warning" id="receitaDupWarning" style="display:none;"><svg class="icon"><use href="#i-triangle-alert"/></svg> Essa receita já está na sua lista.</div>
+
+    <span class="field-label">Categoria</span>
+    <div id="receitaCategoryRow"></div>
+
+    <span class="field-label"><svg class="icon"><use href="#i-leaf"/></svg> Ingredientes (um por linha)</span>
+    <textarea class="diario-textarea" id="receitaIngredientsInput" rows="5" placeholder="2 xícaras de farinha&#10;1 ovo&#10;500g de frango…"></textarea>
+
+    <span class="field-label"><svg class="icon"><use href="#i-chef-hat"/></svg> Modo de preparo (um passo por linha)</span>
+    <textarea class="diario-textarea" id="receitaInstructionsInput" rows="4" placeholder="Misture os secos&#10;Adicione os ovos e bata bem&#10;Leve ao forno por 40 minutos…"></textarea>
+
+    <span class="field-label">Observações</span>
+    <textarea class="diario-textarea" id="receitaObsInput" rows="3" placeholder="Alguma dica, substituição, o que vocês acharam…"></textarea>
+
+    <div class="modal-actions">
+      <button class="modal-save" id="receitaModalSave">Salvar receita</button>
+      <button class="modal-remove" id="receitaModalRemove" style="display:none;"><svg class="icon"><use href="#i-trash-2"/></svg> Remover receita</button>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== MODAL: adicionar/editar item "quero fazer" ==================== -->
+<div class="modal-overlay" id="queroFazerModalOverlay">
+  <div class="modal-card">
+    <div class="modal-close" id="queroFazerModalClose"><svg class="icon"><use href="#i-x"/></svg></div>
+    <div class="modal-eyebrow" id="queroFazerModalEyebrow">Nova receita pra fazer</div>
+
+    <input type="text" class="search diario-title-input" id="queroFazerTitleInput" placeholder="Nome da receita">
+    <div class="dup-warning" id="queroFazerDupWarning" style="display:none;"><svg class="icon"><use href="#i-triangle-alert"/></svg> Essa receita já está na sua lista.</div>
+
+    <span class="field-label">Categoria</span>
+    <div id="queroFazerCategoryRow"></div>
+
+    <span class="field-label">Link do vídeo (TikTok, Instagram…)</span>
+    <div class="input-icon-wrap">
+      <svg class="icon"><use href="#i-link"/></svg>
+      <input type="url" class="search" id="queroFazerVideoInput" placeholder="https://…">
+    </div>
+
+    <span class="field-label">Cole aqui a legenda/descrição do vídeo</span>
+    <textarea class="diario-textarea" id="queroFazerCaptionInput" rows="4" placeholder="Cole o texto da legenda do TikTok/Instagram aqui…"></textarea>
+    <button type="button" class="extract-btn" id="queroFazerExtractBtn"><svg class="icon"><use href="#i-wand-2"/></svg> Tentar extrair ingredientes da legenda</button>
+
+    <span class="field-label"><svg class="icon"><use href="#i-leaf"/></svg> Ingredientes (um por linha — revise o que foi extraído)</span>
+    <textarea class="diario-textarea" id="queroFazerIngredientsInput" rows="5" placeholder="2 xícaras de farinha&#10;1 ovo&#10;500g de frango…"></textarea>
+
+    <div class="modal-actions">
+      <button class="modal-save" id="queroFazerModalSave">Salvar na lista</button>
+      <button class="modal-mark-watched" id="queroFazerMarkFeita" style="display:none;"><svg class="icon"><use href="#i-check"/></svg> Já fiz — mover pra Receitas</button>
+      <button class="modal-remove" id="queroFazerModalRemove" style="display:none;"><svg class="icon"><use href="#i-trash-2"/></svg> Remover da lista</button>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== TELA DE LEITURA DA RECEITA ==================== -->
+<div class="modal-overlay" id="recipeViewOverlay">
+  <div class="modal-card view-card">
+    <div class="modal-close" id="recipeViewClose"><svg class="icon"><use href="#i-x"/></svg></div>
+
+    <div class="view-photo" id="viewPhoto"></div>
+
+    <div class="view-body">
+      <div class="view-category" id="viewCategory"></div>
+      <h2 class="view-title" id="viewTitle"></h2>
+
+      <a class="view-video-link" id="viewVideoLink" href="#" target="_blank" rel="noopener" style="display:none;">
+        <svg class="icon"><use href="#i-link"/></svg> <span id="viewVideoLinkText">Ver vídeo original</span>
+      </a>
+
+      <div class="view-section" id="viewIngredientsSection">
+        <h3><svg class="icon"><use href="#i-leaf"/></svg> Ingredientes</h3>
+        <ul class="view-ingredients-list" id="viewIngredientsList"></ul>
+      </div>
+
+      <div class="view-section" id="viewInstructionsSection">
+        <h3><svg class="icon"><use href="#i-chef-hat"/></svg> Modo de preparo</h3>
+        <ol class="view-steps-list" id="viewStepsList"></ol>
+      </div>
+
+      <div class="view-note" id="viewObsSection" style="display:none;">
+        <svg class="icon"><use href="#i-quote"/></svg>
+        <p id="viewObsText"></p>
+      </div>
+
+      <div class="modal-actions">
+        <button class="modal-mark-watched" id="viewMarkFeitaBtn" style="display:none;"><svg class="icon"><use href="#i-check"/></svg> Já fiz — mover pra Receitas</button>
+        <button class="modal-save view-edit-btn" id="viewEditBtn"><svg class="icon"><use href="#i-pencil"/></svg> Editar receita</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  Feito para Paulo &amp; Julia <span class="heart">♥</span> — receita por receita, sessão de cozinha por sessão.
+</footer>
+
+<script type="module" src="app.js?v=5"></script>
+</body>
+</html>
