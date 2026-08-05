@@ -71,42 +71,68 @@ header{
   padding:40px 20px 22px;
   overflow:hidden;
 }
-.kitchen-band{
-  position:absolute; top:0; left:0; right:0; height:6px;
-  background-repeat:repeat-x;
-  background-size:16px 6px;
-  background-image:repeating-linear-gradient(90deg, var(--terracotta) 0 8px, var(--olive) 8px 16px);
-  opacity:.85;
+/* ---------- Logo do casal (hero), com brilho e partículas ---------- */
+.hero-photo-wrap{
+  position:relative;
+  width:min(52vw, 192px);
+  aspect-ratio:1/1;
+  margin:6px auto 0;
+  display:flex;
+  align-items:center;
+  justify-content:center;
 }
-.hero-badge{
-  width:52px; height:52px;
-  margin:20px auto 0;
+.hero-glow{
+  position:absolute;
+  inset:-22%;
   border-radius:50%;
-  background:linear-gradient(150deg, var(--terracotta), var(--mustard));
-  color:#fff;
-  display:flex; align-items:center; justify-content:center;
-  font-size:22px;
-  box-shadow:0 10px 24px -10px rgba(201,98,47,.55);
+  background:radial-gradient(circle, rgba(201,98,47,.4), rgba(217,164,65,.3) 45%, transparent 72%);
+  filter:blur(20px);
+  animation:hero-glow-pulse 4s var(--ease-in-out) infinite;
 }
+@keyframes hero-glow-pulse{
+  0%,100%{transform:scale(1); opacity:.7;}
+  50%{transform:scale(1.14); opacity:1;}
+}
+.hero-photo{
+  position:relative;
+  width:100%;
+  height:100%;
+  object-fit:contain;
+  filter:drop-shadow(0 14px 22px rgba(58,42,28,.35));
+  animation:hero-float 5s var(--ease-in-out) infinite;
+}
+@keyframes hero-float{
+  0%,100%{transform:translateY(0) rotate(-2deg);}
+  50%{transform:translateY(-8px) rotate(2deg);}
+}
+.hero-particles{position:absolute; inset:-35%; pointer-events:none;}
+.hero-particle{
+  position:absolute;
+  width:5px; height:5px;
+  border-radius:50%;
+  opacity:0;
+  box-shadow:0 0 8px 1px currentColor;
+  animation:hero-particle-float 3s ease-in infinite;
+}
+@keyframes hero-particle-float{
+  0%{opacity:0; transform:translate(0,0) scale(.4);}
+  18%{opacity:1;}
+  100%{opacity:0; transform:translate(var(--px), var(--py)) scale(1.3);}
+}
+@media (min-width:600px){ .hero-photo-wrap{width:208px;} }
+
 h1{
   font-family:'Fraunces',serif;
-  font-weight:600;
-  font-size:30px;
-  line-height:1.1;
-  margin:14px 0 0;
+  font-weight:700;
+  font-size:28px;
+  line-height:1.2;
+  margin:20px 0 0;
   color:var(--text);
+  max-width:320px;
+  margin-left:auto;
+  margin-right:auto;
 }
 h1 em{font-style:italic; font-weight:500; color:var(--terracotta-deep);}
-.hero-title-sub{
-  display:block;
-  font-family:'Fraunces',serif;
-  font-style:italic;
-  font-weight:500;
-  font-size:15px;
-  color:var(--olive-deep);
-  letter-spacing:.01em;
-  margin-bottom:2px;
-}
 .hero-sub{
   margin:12px auto 0;
   max-width:340px;
@@ -114,7 +140,9 @@ h1 em{font-style:italic; font-weight:500; color:var(--terracotta-deep);}
   color:var(--muted);
   line-height:1.5;
 }
-@media (min-width:420px){ h1{font-size:38px;} }
+@media (min-width:420px){
+  h1{font-size:34px; max-width:none;}
+}
 
 /* ---------- Home: insights animados sobre a jornada do casal ---------- */
 .home-insights{

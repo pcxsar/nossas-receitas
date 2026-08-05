@@ -25,6 +25,28 @@ function linesFrom(text){
 }
 const posterPlaceholderHTML = `<div class="r-poster-placeholder">${iconHtml('utensils')}</div>`;
 
+// Partículas saindo da logo do casal no topo (decorativo)
+(function initHeroParticles(){
+  const container = document.getElementById('heroParticles');
+  if(!container) return;
+  const colors = ['#c9622f', '#d9a441', '#c15a72', '#748249'];
+  for(let i=0;i<10;i++){
+    const p = document.createElement('div');
+    p.className = 'hero-particle';
+    const angle = Math.random()*Math.PI*2;
+    const dist = 30 + Math.random()*40;
+    p.style.left = (50 + Math.cos(angle)*18) + '%';
+    p.style.top = (50 + Math.sin(angle)*18) + '%';
+    p.style.setProperty('--px', Math.cos(angle)*dist + 'px');
+    p.style.setProperty('--py', Math.sin(angle)*dist + 'px');
+    p.style.color = colors[i % colors.length];
+    p.style.background = colors[i % colors.length];
+    p.style.animationDelay = (Math.random()*3) + 's';
+    p.style.animationDuration = (2.4 + Math.random()*1.8) + 's';
+    container.appendChild(p);
+  }
+})();
+
 /* =====================================================
    Categorias (agrupadas em Salgados / Doces / Bebidas)
 ===================================================== */
